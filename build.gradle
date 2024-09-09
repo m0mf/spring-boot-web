@@ -31,3 +31,20 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootRun {
+	jvmArgs = [
+			"-Dspring.profiles.active=local",
+			"-Dfile.encoding=UTF-8",
+			"-Xms1g",
+			"-Xmx1g",
+			"-server",
+			"-XX:MaxDirectMemorySize=2g",
+			"-XX:+UseG1GC",
+			"-XX:+DisableExplicitGC"
+	]
+}
+
+bootWar {
+	archiveFileName.set("k0cp-platform.war")
+}
