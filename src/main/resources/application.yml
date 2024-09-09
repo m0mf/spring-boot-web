@@ -1,3 +1,7 @@
 spring:
   application:
     name: k0cp
+  threads:
+    virtual:
+      enabled: false
+
